@@ -20,7 +20,7 @@ const PostSchema = new mongoose.Schema(
     },
     slug: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
     },
     excerpt: {
@@ -28,12 +28,11 @@ const PostSchema = new mongoose.Schema(
       maxlength: [200, 'Excerpt cannot be more than 200 characters'],
     },
     author: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      type: String,
       required: true,
     },
     category: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
       ref: 'Category',
       required: true,
     },
@@ -97,4 +96,5 @@ PostSchema.methods.incrementViewCount = function () {
   return this.save();
 };
 
-module.exports = mongoose.model('Post', PostSchema); 
+const Post = mongoose.model('Post', PostSchema);
+module.exports = Post;
