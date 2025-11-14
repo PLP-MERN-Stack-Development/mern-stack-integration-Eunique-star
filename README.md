@@ -1,78 +1,125 @@
-# MERN Stack Integration Assignment
+# Blog App (MERN)
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+This repository contains a full-stack blog application built with the MERN stack (MongoDB, Express, React, Node). The app includes user authentication, post CRUD, image upload support, and a React front-end with a Vite dev setup.
 
-## Assignment Overview
+**Quick Links**
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+- **Project root**: `./`
+- **Client**: `./client`
+- **Server**: `./server`
 
-## Project Structure
+**Screenshots**
+
+![Login screen](./screenshots/login.png)
+![Post list](./screenshots/postlist.png)
+![Create post](./screenshots/createpost.png)
+
+**Features**
+
+- **CRUD posts**: Create, read, update, and delete blog posts.
+- **Authentication**: User registration and login with protected routes.
+- **Image uploads**: Upload images for posts (stored in `uploads/`).
+- **REST API**: Express + MongoDB (Mongoose) back-end.
+- **React + Vite**: Fast front-end development with Vite.
+
+**Project Structure**
+
+- **`client/`**: React front-end (Vite)
+- **`server/`**: Express back-end, routes, controllers, models
+- **`uploads/`**: Uploaded images (server-side static files)
+
+**Tech Stack**
+
+- **Front-end**: React, Vite, Tailwind CSS (optional), React Router
+- **Back-end**: Node.js, Express, MongoDB, Mongoose
+- **Auth**: JSON Web Tokens (JWT) and middleware for protected routes
+- **File upload**: `multer`
+
+**Local Setup**
+
+1. Clone the repository and open the project root.
+
+2. Install dependencies for both server and client.
+
+   - Server (from `server/`):
+
+     ```powershell
+     cd server
+     npm install
+     ```
+
+   - Client (from `client/`):
+     ```powershell
+     cd client
+     npm install
+     ```
+
+3. Environment variables
+
+- Create a `.env` file in `server/` (example variables below):
 
 ```
-mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 ```
 
-## Getting Started
+4. Run the apps locally
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+- Start the server (from `server/`):
 
-## Files Included
+  ```powershell
+  cd server
+  npm run dev
+  ```
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+- Start the client (from `client/`):
+  ```powershell
+  cd client
+  npm run dev
+  ```
 
-## Requirements
+By default the client runs on `http://localhost:5173` (Vite) and the server runs on `http://localhost:5000` (adjust ports via `.env` or scripts).
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git
+**Available Scripts**
 
-## Submission
+- Server: `npm run dev` (nodemon), `npm start` (node)
+- Client: `npm run dev` (vite), `npm run build`, `npm run preview`
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+**How to Add Screenshots**
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+- Create a `screenshots/` folder at the repo root (already included placeholder). Add images with these example filenames:
+  - `screenshots/login.png`
+  - `screenshots/post-list.png`
+  - `screenshots/create-post.png`
+- After adding images, they will render in this README automatically.
 
-## Resources
+**Deployment Notes**
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+- For deployment, build the client (`cd client && npm run build`) and serve the static `dist/` from the server (or host the client separately). Ensure `MONGO_URI` and `JWT_SECRET` are set in production environment variables.
+
+**Troubleshooting**
+
+- If images don't display, verify file names and relative paths: `./screenshots/<name>.png`.
+- If the server cannot connect to MongoDB, validate `MONGO_URI` and network access (Atlas IP whitelist).
+
+**Useful Files**
+
+- Server entry: `server/src/server.js`
+- Client entry: `client/src/main.jsx`
+- API helper: `client/src/services/api.js`
+
+**Contributing**
+
+- Feel free to open issues or create PRs. For major changes, open an issue first to discuss the change.
+
+**License**
+
+- This project does not include a license file. Add one if you plan to share or publish.
+
+---
+
+If you want, I can:
+
+- Add example screenshots into `screenshots/` as placeholders, or
+- Update this README with additional sections (API reference, Post model schema, or deployment steps).
