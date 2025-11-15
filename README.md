@@ -10,9 +10,9 @@ This repository contains a full-stack blog application built with the MERN stack
 
 **Screenshots**
 
-![Login screen](./screenshots/login.png)
-![Post list](./screenshots/postlist.png)
-![Create post](./screenshots/createpost.png)
+![Login screen](./screenshots/login.PNG)
+![Post list](./screenshots/postlist.PNG)
+![Create post](./screenshots/createpost.PNG)
 
 **Features**
 
@@ -86,40 +86,12 @@ By default the client runs on `http://localhost:5173` (Vite) and the server runs
 - Server: `npm run dev` (nodemon), `npm start` (node)
 - Client: `npm run dev` (vite), `npm run build`, `npm run preview`
 
-**How to Add Screenshots**
-
-- Create a `screenshots/` folder at the repo root (already included placeholder). Add images with these example filenames:
-  - `screenshots/login.png`
-  - `screenshots/post-list.png`
-  - `screenshots/create-post.png`
-- After adding images, they will render in this README automatically.
-
 **Deployment Notes**
 
 - For deployment, build the client (`cd client && npm run build`) and serve the static `dist/` from the server (or host the client separately). Ensure `MONGO_URI` and `JWT_SECRET` are set in production environment variables.
-
-**Troubleshooting**
-
-- If images don't display, verify file names and relative paths: `./screenshots/<name>.png`.
-- If the server cannot connect to MongoDB, validate `MONGO_URI` and network access (Atlas IP whitelist).
 
 **Useful Files**
 
 - Server entry: `server/src/server.js`
 - Client entry: `client/src/main.jsx`
 - API helper: `client/src/services/api.js`
-
-**Contributing**
-
-- Feel free to open issues or create PRs. For major changes, open an issue first to discuss the change.
-
-**License**
-
-- This project does not include a license file. Add one if you plan to share or publish.
-
----
-
-If you want, I can:
-
-- Add example screenshots into `screenshots/` as placeholders, or
-- Update this README with additional sections (API reference, Post model schema, or deployment steps).
